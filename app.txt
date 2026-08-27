@@ -1,2 +1,0 @@
-Application started
-Processing data

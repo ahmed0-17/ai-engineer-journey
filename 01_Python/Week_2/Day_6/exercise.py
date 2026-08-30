@@ -1,4 +1,4 @@
-#decorators with ar~guments
+#decorators with arguments
 def add_logging(function):
 
     def wrapper(*args,**kwargs):

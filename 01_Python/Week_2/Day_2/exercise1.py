@@ -4,8 +4,8 @@ from dataclasses import dataclass,field
 class Document:
     title:str
     content:str
-    tags:list=field(default_factory=list)
-    metadata:dict=field(default_factory=dict)
+    tags:list[str]=field(default_factory=list)
+    metadata:dict[str:int]=field(default_factory=dict)
     
 
 

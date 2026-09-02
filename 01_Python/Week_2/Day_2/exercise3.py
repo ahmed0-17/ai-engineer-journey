@@ -37,7 +37,8 @@ def create_ai_config(model,temp):
 
 
 try:
-   model_info=create_ai_config("gemini",2)
+   model_info=create_ai_config("grok",3)
+#    model_info=create_ai_config("gemini",2)
    print(model_info)
 
 except InvalidTemperatureError as error:

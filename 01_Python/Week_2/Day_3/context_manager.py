@@ -6,6 +6,7 @@ class MyContext:
 
     def __exit__(self, exc_type, exc_value, traceback):
         print("Leaving context")
+        
 
 
 

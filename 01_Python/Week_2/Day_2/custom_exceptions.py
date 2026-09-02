@@ -38,7 +38,7 @@ def set_temperature(temperature):
 
 
 try:
-    temperature=set_temperature(3)
-    print(temperature)
+    temperature=set_temperature(1)
+    print(f"Temperaure is in range : {temperature} C")
 except InvalidTemperatureError as error:
     print(error)    

@@ -3,7 +3,7 @@ try:
     number1 = int(input("Enter a number1: "))
     number2 = int(input("Enter a number2: "))
     result = number1 / number2
-    print(result)
+ 
 
 except ZeroDivisionError:
         # handle error
@@ -24,20 +24,24 @@ finally:
 
 
 
-# file = None
+# 2nd example
 
-# try:
-#     file = open("data.txt")
-#     # work with file
+try:
+    file = open("file.txt", "r")
+    content = file.read()
 
-# except FileNotFoundError:
-#     print("File not found.")
+except FileNotFoundError:
+    print("File not found.")
 
-# else:
-#     print("file is existed")    
+else:
+    print("File exists.")
+    print(content)
 
-# finally:
-#     if file:
-#         file.close()
+finally:
+    try:
+        file.close()
+        print("File is closed")
+    except NameError:
+        print("File was never opened")
 
-
+    print("Program is finished")

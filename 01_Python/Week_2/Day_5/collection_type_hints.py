@@ -21,11 +21,15 @@ print(get_score(
 
 
 #tuple type hint
-def get_user_info(user:tuple[str,int])->str:
-  return f"{user[0]} is {user[1]} years old ."
+#we can define tuples types based on position
+def get_user_info(user:tuple[str,int|None])->str | None:
+     if user[0] is None:
+          return f"User is {user[1]} years old ."
+     return f"{user[0]} is {user[1]} years old ."
+  
 
 
-print(get_user_info(("Ahmed",22)))
+print(get_user_info((None,22)))
 
 
 

@@ -28,5 +28,6 @@ with FileLogger("app.txt") as logger:
     logger.log("Processing data")
     raise ValueError("Value error")
 
+print("Program continues")
 
  

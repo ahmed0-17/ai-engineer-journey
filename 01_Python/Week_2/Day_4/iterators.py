@@ -9,18 +9,19 @@ print(next(iterator))
 print(next(iterator))
 print(next(iterator))
 print(next(iterator))
+print(next(iterator))
 
 
 
 # for loop conceptually flow
 
-numbers = [10, 20, 30]
+# numbers = [10, 20, 30]
 
-iterator = iter(numbers)
+# iterator = iter(numbers)
 
-while True:
-    try:
-        number = next(iterator)
-        print(number)
-    except StopIteration:
-        break
+# while True:
+#     try:
+#         number = next(iterator)
+#         print(number)
+#     except StopIteration:
+#         break

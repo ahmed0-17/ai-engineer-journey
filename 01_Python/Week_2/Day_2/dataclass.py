@@ -10,7 +10,7 @@ class Employee:
 
 
 
-emp1=Employee(name="Ahmed Ali Malik",age=22,salary=450000,dept="SWE")
+emp1=Employee("Ahmed Ali Malik",22,450000,"SWE")
 print(emp1)
 print(emp1.name)
 print(emp1.salary)

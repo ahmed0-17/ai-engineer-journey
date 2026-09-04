@@ -15,6 +15,18 @@ def logaction(function):
     return wrapper_function
 
 
+def generator_log(function):
+    @wraps(function)
+    def wrapper_function(*args, **kwargs):
+        result = function(*args, **kwargs)
+
+        for item in result:
+            print("Called")
+            yield item
+
+    return wrapper_function
+
+
 @dataclass
 class Document:
     title: str
@@ -81,8 +93,19 @@ class DocumentManager:
             data = file.read()
 
         return data
+    @generator_log
+    def document_generator(self):
+     for doc in self.documents:
+      yield doc
 
 
+
+
+
+
+
+
+     
 doc1 = Document(
     "The AI Era",
     "The book is about building i models....",
@@ -99,7 +122,7 @@ manager = DocumentManager()
 
 manager.add_document(doc1)
 manager.add_document(doc2)
-manager.add_document(doc1)
+
 
 manager.list_documents()
 
@@ -107,3 +130,10 @@ manager.save_document()
 print(manager.read_document())
 
 # print(manager.search_document("The Python"))
+
+
+generator = manager.document_generator()
+
+print(next(generator))
+print(next(generator))
+

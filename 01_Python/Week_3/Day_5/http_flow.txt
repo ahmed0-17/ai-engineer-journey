@@ -1,0 +1,46 @@
+CLIENT
+  │
+  │
+  │ "Mujhe product 123 chahiye"
+  │
+  │ URL:
+  │ https://shop.com/products/123?details=true
+  │
+  │ Method:
+  │ GET
+  │
+  │ Headers:
+  │ Accept: application/json
+  │ Authorization: Bearer abc123
+  │ User-Agent: Python-App
+  │
+  │ Body:
+  │ Usually none
+  │
+  ▼
+SERVER
+  │
+  │ Authentication
+  │      ↓
+  │ Database
+  │      ↓
+  │ Product 123 found
+  │
+  ▼
+RESPONSE
+  │
+  │ Status:
+  │ 200 OK
+  │
+  │ Header:
+  │ Content-Type: application/json
+  │
+  │ Body:
+  │ {
+  │   "id": 123,
+  │   "name": "iPhone",
+  │   "price": 200000
+  │ }
+  │
+  ▼
+CLIENT

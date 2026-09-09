@@ -7,7 +7,7 @@ headers={
 
 payload={
     "title":"httpx request",
-    "body":"Sending request through httpx library synchronusly",
+    "body":"Sending request through HTTPX library synchronously",
     "userId" :1
 }
 

@@ -31,6 +31,9 @@ async def consumer(queue, client, semaphore):
     
     except httpx.HTTPStatusError as error:
        print(f"Status Error {error}")
+
+    except asyncio.TimeoutError:
+      print("Request timed out")   
    
     finally:
         queue.task_done()

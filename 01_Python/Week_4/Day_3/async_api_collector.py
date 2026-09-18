@@ -1,4 +1,3 @@
-
 import asyncio
 import httpx
 import logging
@@ -47,11 +46,11 @@ async def get_data():
 
             logger.info("Data fetched successfully")
 
-            return (
-                f"Users fetched: {len(result1)}, "
-                f"Posts fetched: {len(result2)}, "
-                f"Todos fetched: {len(result3)}"
-            )
+            return {
+                "users": result1,
+                "posts": result2,
+                "todos": result3
+            }
 
     except httpx.RequestError as error:
         logger.error(f"Request Error: {error}")
@@ -62,7 +61,17 @@ async def get_data():
 
 async def main():
     result = await get_data()
-    print(result)
+
+    users=result["users"]
+    posts=result["posts"]
+    todos=result["todos"]
+
+    for user in users:
+          user_id=user["id"]
+
+          user_posts=[post for post in posts if user_id==post["userId"]]
+
+          print(f"{user["name"]} Posts :{len(user_posts)}")  
 
 
 asyncio.run(main())

@@ -1,4 +1,5 @@
-from async_api_collector import process_data
+from Project.async_api_collector import process_data,save_data
+import pytest
 
 def test_process_data():
     users = [
@@ -44,7 +45,7 @@ def test_process_data():
 
 
 
-def test_process_data_zero_posts_todos():
+def test_process_data_zero_postsandtodos():
  users = [
     {
         "id": 1,
@@ -79,3 +80,14 @@ def test_process_data_missingid():
   posts = []
   todos = [] 
   assert process_data(users,posts,todos)==[]
+
+
+
+
+  def get_user_email(user):
+    return user["email"]
+
+
+
+
+

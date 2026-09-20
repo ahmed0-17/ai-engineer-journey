@@ -1,0 +1,16 @@
+2026-09-20 05:26:54,264 - INFO - __main__ - Start fetching data
+2026-09-20 05:26:54,773 - INFO - httpx - HTTP Request: GET https://jsonplaceholder.typicode.com/posts "HTTP/1.1 200 OK"
+2026-09-20 05:26:54,777 - INFO - httpx - HTTP Request: GET https://jsonplaceholder.typicode.com/users "HTTP/1.1 200 OK"
+2026-09-20 05:26:54,781 - INFO - httpx - HTTP Request: GET https://jsonplaceholder.typicode.com/todos "HTTP/1.1 200 OK"
+2026-09-20 05:26:54,784 - INFO - __main__ - Data fetched successfully
+2026-09-20 05:26:54,785 - INFO - __main__ - Processing users data
+2026-09-20 05:26:54,786 - INFO - __main__ - Users data processed successfully
+2026-09-20 05:26:54,788 - INFO - __main__ - Saved 10 users
+2026-09-20 05:27:24,972 - INFO - __main__ - Start fetching data
+2026-09-20 05:27:25,885 - INFO - httpx - HTTP Request: GET https://jsonplaceholder.typicode.com/todos "HTTP/1.1 200 OK"
+2026-09-20 05:27:25,887 - INFO - httpx - HTTP Request: GET https://jsonplaceholder.typicode.com/users "HTTP/1.1 200 OK"
+2026-09-20 05:27:25,888 - INFO - httpx - HTTP Request: GET https://jsonplaceholder.typicode.com/posts "HTTP/1.1 200 OK"
+2026-09-20 05:27:25,894 - INFO - __main__ - Data fetched successfully
+2026-09-20 05:27:25,896 - INFO - __main__ - Processing users data
+2026-09-20 05:27:25,896 - INFO - __main__ - Users data processed successfully
+2026-09-20 05:27:25,898 - INFO - __main__ - Saved 10 users

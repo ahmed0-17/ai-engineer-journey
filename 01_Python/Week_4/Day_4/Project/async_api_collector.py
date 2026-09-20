@@ -6,7 +6,7 @@ from pathlib import Path
 
 logging.basicConfig(
     level=logging.INFO,
-    filename="01_Python/Week_4/Day_3/app.log",
+    filename="app.log",
     format="%(asctime)s - %(levelname)s - %(name)s - %(message)s"
 )
 
@@ -94,7 +94,7 @@ async def main():
     users=result["users"]
     posts=result["posts"]
     todos=result["todos"]
-    data_dir= Path("01_Python/Week_4/Day_3/Data")
+    data_dir= Path("Data")
 
     processed_data=process_data(users,posts,todos)
     save_data(data_dir,processed_data)

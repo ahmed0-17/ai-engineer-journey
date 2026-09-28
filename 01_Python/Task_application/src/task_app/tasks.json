@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "Learn Python",
+        "description": "with context manager",
+        "priority": "Medium",
+        "completed": false,
+        "created_at": "2026-09-29T02:39:46.438256"
+    },
+    {
+        "id": 2,
+        "title": "Learn JS",
+        "description": "with context API",
+        "priority": "Medium",
+        "completed": false,
+        "created_at": "2026-09-29T02:39:46.438270"
+    }
+]

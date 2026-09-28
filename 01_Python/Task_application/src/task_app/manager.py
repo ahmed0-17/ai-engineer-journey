@@ -1,4 +1,4 @@
-from .models import Task
+from models import Task
 from datetime import datetime
 
 
@@ -82,5 +82,13 @@ class TaskManager:
 
 
 
-Task1=TaskManager("LEARN PYTHON","with context manager","High")
-print(Task1)
+Task1=TaskManager()
+print(Task1.create_task("Learn Python","with context manager and exceptions","Low"))
+print(Task1.get_task(1))
+Task1.update_task(1,"Learn RAG Engineering", "with advanced concepts","High")
+print(Task1.get_task(1))
+Task1.complete_task(1)
+print(Task1.get_task(1))
+Task1.delete_task(1)
+print(Task1.get_task(1))
+print(Task1.get_tasks())

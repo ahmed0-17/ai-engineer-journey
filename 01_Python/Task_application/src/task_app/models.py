@@ -11,6 +11,3 @@ class Task:
     created_at:str
 
 
-task1=Task(1,"Learning Python","with context manager and exceptions","High",False,"4-08-26")
-
-print(task1.priority)

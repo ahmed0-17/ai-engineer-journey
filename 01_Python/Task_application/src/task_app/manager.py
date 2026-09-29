@@ -1,12 +1,20 @@
 from models import Task
 from datetime import datetime
-
+from storage import Storage
 
 class TaskManager:
 
     def __init__(self):
-        self.tasks: list[Task] = []
-        self.next_id = 1
+        self.storage=Storage()
+        self.tasks: list[Task] = self.storage.load_tasks()
+
+        # setting id dynamically
+        if self.tasks:
+            self.next_id = max(task.id for task in self.tasks) + 1
+        else:
+            self.next_id = 1
+            
+    
 
     def create_task(
         self,
@@ -26,6 +34,7 @@ class TaskManager:
 
         self.tasks.append(task)
         self.next_id += 1
+        self.storage.save_tasks(self.tasks)
 
         return task
 
@@ -48,6 +57,7 @@ class TaskManager:
             return False
 
         self.tasks.remove(task)
+        self.storage.save_tasks(self.tasks)
         return True
 
     def complete_task(self, task_id: int) -> bool:
@@ -58,6 +68,7 @@ class TaskManager:
             return False
 
         task.completed = True
+        self.storage.save_tasks(self.tasks)
         return True
 
     def update_task(
@@ -76,19 +87,10 @@ class TaskManager:
         task.title = title
         task.description = description
         task.priority = priority
+        self.storage.save_tasks(self.tasks)
 
         return task
 
 
 
 
-Task1=TaskManager()
-print(Task1.create_task("Learn Python","with context manager and exceptions","Low"))
-print(Task1.get_task(1))
-Task1.update_task(1,"Learn RAG Engineering", "with advanced concepts","High")
-print(Task1.get_task(1))
-Task1.complete_task(1)
-print(Task1.get_task(1))
-Task1.delete_task(1)
-print(Task1.get_task(1))
-print(Task1.get_tasks())

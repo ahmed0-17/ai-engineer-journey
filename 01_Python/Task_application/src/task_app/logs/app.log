@@ -1,0 +1,24 @@
+2026-10-01 01:57:16,792 - task_app - INFO - 0 tasks fetched successfully
+2026-10-01 01:57:16,793 - task_app - INFO - Task Created successfully
+2026-10-01 01:57:16,793 - task_app - WARNING - Task not found with ID 2
+2026-10-01 01:57:16,793 - task_app - INFO - Task fetched successfully having ID 1
+2026-10-01 01:57:16,793 - task_app - INFO - Task deleted successfully having ID 1
+2026-10-01 01:57:16,794 - task_app - INFO - Task Created successfully
+2026-10-01 03:33:12,666 - task_app - INFO - Task Created successfully
+2026-10-01 03:38:51,728 - task_app - INFO - Task fetched successfully having ID 2
+2026-10-01 03:39:09,067 - task_app - INFO - 2 tasks fetched successfully
+2026-10-01 03:40:40,636 - task_app - INFO - Task Created successfully
+2026-10-01 03:42:30,032 - task_app - INFO - Task fetched successfully having ID 3
+2026-10-01 03:43:37,260 - task_app - INFO - Task fetched successfully having ID 3
+2026-10-01 03:45:05,450 - task_app - INFO - Task fetched successfully having ID 4
+2026-10-01 04:02:27,625 - task_app - INFO - Task Created successfully
+2026-10-01 04:03:05,247 - task_app - INFO - 3 tasks fetched successfully
+2026-10-01 04:03:19,211 - task_app - INFO - Task fetched successfully having ID 3
+2026-10-01 04:05:48,204 - task_app - INFO - Task fetched successfully having ID 3
+2026-10-01 04:05:48,206 - task_app - INFO - Task Completed successfully having ID 3
+2026-10-01 04:06:02,885 - task_app - INFO - Task fetched successfully having ID 3
+2026-10-01 04:06:02,886 - task_app - INFO - Task deleted successfully having ID 3
+2026-10-01 04:29:19,228 - task_app - WARNING - Task not found with ID 4
+2026-10-01 04:29:19,229 - task_app - WARNING - Task not found with ID 3
+2026-10-01 04:29:55,047 - task_app - INFO - Task fetched successfully having ID 4
+2026-10-01 04:29:55,049 - task_app - INFO - Task updated successfully having ID 4

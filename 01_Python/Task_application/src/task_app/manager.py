@@ -1,7 +1,7 @@
-from models import Task
+from .models import Task
 from datetime import datetime
-from storage import Storage
-from app_logging import get_logger
+from .storage import Storage
+from .app_logging import get_logger
 class TaskManager:
 
     def __init__(self):
@@ -47,9 +47,9 @@ class TaskManager:
 
         for task in self.tasks:
             if task.id == task_id:
-                self.logger.info(f"Task fetched successfully having ID {task.id}") 
+                self.logger.info(f"Task fetched successfully having ID {task_id}") 
                 return task
-        self.logger.warning(f"Task not found with ID {task.id}")  
+        self.logger.warning(f"Task not found with ID {task_id}")  
         return None
 
     def delete_task(self, task_id: int) -> bool:

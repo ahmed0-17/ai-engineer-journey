@@ -3,15 +3,16 @@ from pathlib import Path
 
 
 def get_logger():
- log_dir=Path("logs")
- log_dir.mkdir(exist_ok=True,parents=True)
- log_file= log_dir / "app.log"
- log_file.touch()
+ BASE_DIR = Path(__file__).resolve().parents[2]
 
+ LOG_DIR = BASE_DIR / "logs"
+ LOG_DIR.mkdir(exist_ok=True)
+
+ LOG_FILE = LOG_DIR / "app.log"
 
  logging.basicConfig(
     level=logging.INFO,
-    filename=log_file,
+    filename=LOG_FILE,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
  return logging.getLogger("task_app")

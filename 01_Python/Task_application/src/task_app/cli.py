@@ -1,6 +1,6 @@
-from manager import TaskManager
-from validation import Validation
-from app_logging import get_logger
+from .manager import TaskManager
+from .validation import Validation
+from .app_logging import get_logger
 manager = TaskManager()
 
 
@@ -89,4 +89,3 @@ def run():
 
 
 
-run()  

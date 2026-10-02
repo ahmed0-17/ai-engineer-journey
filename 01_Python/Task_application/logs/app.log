@@ -1,0 +1,7 @@
+2026-10-02 22:26:05,661 - task_app - INFO - Task Created successfully
+2026-10-02 22:26:33,663 - task_app - INFO - Task fetched successfully having ID 1
+2026-10-02 22:26:33,664 - task_app - INFO - Task updated successfully having ID 1
+2026-10-02 22:26:45,085 - task_app - INFO - Task fetched successfully having ID 1
+2026-10-02 22:26:45,086 - task_app - INFO - Task Completed successfully having ID 1
+2026-10-02 22:26:56,905 - task_app - INFO - Task fetched successfully having ID 1
+2026-10-02 22:26:56,906 - task_app - INFO - Task deleted successfully having ID 1

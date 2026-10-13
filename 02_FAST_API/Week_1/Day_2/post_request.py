@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,status
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -10,6 +10,6 @@ class Product(BaseModel):
     stock: int
 
 
-@app.post("/products")
+@app.post("/products",status_code=status.HTTP_201_CREATED)
 def create_product(product: Product):
     return product

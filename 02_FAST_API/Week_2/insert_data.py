@@ -41,7 +41,7 @@ class Task(Base):
 try:
     with Session(engine) as session:
         task = Task(
-            title="Practice SQLAlchemy ORM",
+            title="Lerning Python",
             completed=False,
         )
 

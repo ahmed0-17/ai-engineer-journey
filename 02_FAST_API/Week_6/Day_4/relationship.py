@@ -1,5 +1,4 @@
 import os
-
 from sqlalchemy import (
     Boolean,
     ForeignKey,
@@ -37,7 +36,6 @@ class Base(DeclarativeBase):
 
 
 # 3. User model
-# Existing users table ko map karta hai
 class User(Base):
     __tablename__ = "users"
 
@@ -50,7 +48,7 @@ class User(Base):
 
 
 # 4. Task model
-# Existing tasks table ko map karta hai
+
 class Task(Base):
     __tablename__ = "tasks"
 

@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 from dataclasses import asdict
-
 from .models import Task
 
 

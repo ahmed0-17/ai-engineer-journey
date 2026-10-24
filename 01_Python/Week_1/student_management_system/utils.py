@@ -1,6 +1,3 @@
-
-
-
 def view_students(students):
     for student in students :
         print("Student Name : ",student["name"])

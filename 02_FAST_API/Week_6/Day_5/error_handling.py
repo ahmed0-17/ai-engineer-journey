@@ -44,3 +44,5 @@ with Session(engine) as session:
     except Exception:
         session.rollback()
         raise
+    finally: 
+       engine.dispose()

@@ -38,7 +38,7 @@ class Base(DeclarativeBase):
 # 3. User model
 class User(Base):
     __tablename__ = "users"
-
+    
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     name: Mapped[str] = mapped_column(String(100))
 

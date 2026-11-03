@@ -1,6 +1,4 @@
-
 import os
-
 from sqlalchemy import Boolean, Integer, Text, create_engine
 from sqlalchemy.engine import URL
 from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column

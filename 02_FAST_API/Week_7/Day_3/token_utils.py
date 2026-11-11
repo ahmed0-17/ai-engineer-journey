@@ -1,14 +1,25 @@
 import os
 import jwt
-
+import secrets
+import hashlib
 from datetime import datetime, timedelta, timezone
+from dotenv import load_dotenv
+
+load_dotenv()
 
 SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
+
+PGUSER = os.getenv("PGUSER")
+PGPASSWORD = os.getenv("PGPASSWORD")
+
+REFRESH_TOKEN_EXPIRE_DAYS = int(
+    os.getenv("REFRESH_TOKEN_EXPIRE_DAYS", "7")
+)
 
 if not SECRET_KEY:
     raise RuntimeError("SECRET_KEY environment variable is missing")
 
-ALGORITHM = "HS256"
 
 
 def create_access_token(data: dict, expires_delta: timedelta):
@@ -45,3 +56,29 @@ def verify_access_token(token: str):
 
     except jwt.InvalidTokenError:
         return None
+
+
+
+
+
+
+def generate_refresh_token():
+
+    refresh_token = secrets.token_urlsafe(64)
+
+    expires_at = (
+        datetime.now(timezone.utc)
+        + timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
+    )
+
+    return refresh_token, expires_at    
+
+
+
+def hash_refresh_token(token: str) -> str:
+
+    token_bytes = token.encode("utf-8")
+
+    token_hash = hashlib.sha256(token_bytes).hexdigest()
+
+    return token_hash

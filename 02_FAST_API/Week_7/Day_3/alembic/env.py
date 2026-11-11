@@ -6,12 +6,14 @@ from logging.config import fileConfig
 from alembic import context
 
 # Project root ko Python path mein add karo
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PROJECT_ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-# Existing database configuration
+DATABASE_DIR = PROJECT_ROOT / "Week_6" / "Day_5"
+
+sys.path.insert(0, str(DATABASE_DIR))
+
 from database import engine, Base
-import models  # Registers User and Task models
+import models
 
 config = context.config
 

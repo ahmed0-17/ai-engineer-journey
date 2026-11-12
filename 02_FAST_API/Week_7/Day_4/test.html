@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CORS Testing</title>
+</head>
+<body>
+    <h1>CORS Test</h1>
+
+    <button onclick="getTasks()">Get Tasks</button>
+
+    <pre id="result"></pre>
+
+    <script>
+        async function getTasks() {
+            try {
+                const response = await fetch(
+                    "http://127.0.0.1:8000/tasks"
+                );
+
+                const data = await response.json();
+
+                document.getElementById("result").textContent =
+                    JSON.stringify(data, null, 2);
+
+            } catch (error) {
+                document.getElementById("result").textContent =
+                    error.message;
+            }
+        }
+    </script>
+</body>
+</html>

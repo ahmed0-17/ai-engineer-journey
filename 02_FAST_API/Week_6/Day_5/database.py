@@ -2,7 +2,7 @@ import os
 
 from sqlalchemy import create_engine
 from sqlalchemy.engine import URL
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase,Session
 
 
 # Database URL
@@ -23,3 +23,10 @@ engine = create_engine(database_url)
 # Base class for all ORM models
 class Base(DeclarativeBase):
     pass
+
+
+
+
+def get_session():
+    with Session(engine) as session:
+        yield session

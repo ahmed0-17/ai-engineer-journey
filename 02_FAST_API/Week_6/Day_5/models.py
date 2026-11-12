@@ -1,7 +1,44 @@
-from sqlalchemy import Integer, Text, Boolean, String, ForeignKey
+from sqlalchemy import Integer,DateTime, Text, Boolean, String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from database import Base
+from datetime import datetime, timezone
+
+
+class RefreshToken(Base):
+    __tablename__ = "refresh_tokens"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE")
+    )
+
+    token_hash: Mapped[str] = mapped_column(
+        String(64),
+        unique=True,
+        index=True
+    )
+
+    expires_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True)
+    )
+
+    revoked: Mapped[bool] = mapped_column(
+        Boolean,
+        default=False
+    )
+
+    user: Mapped["User"] = relationship(
+    back_populates="refresh_tokens"
+    )
+
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        default=lambda: datetime.now(timezone.utc)
+    )
+
+
 
 
 # User Model
@@ -21,6 +58,22 @@ class User(Base):
     tasks: Mapped[list["Task"]] = relationship(
         back_populates="user"
     )
+
+    email: Mapped[str] = mapped_column(
+            String(255),
+        unique=True,
+        nullable=True
+        )
+    
+    password_hash: Mapped[str] = mapped_column(
+        String(255),
+        nullable=True
+        )
+
+    refresh_tokens: Mapped[list["RefreshToken"]] = relationship(
+    back_populates="user",
+    cascade="all, delete-orphan"
+)
 
 
 # Task Model

@@ -1,0 +1,45 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CORS Testing</title>
+</head>
+<body>
+    <h1>CORS Test</h1>
+
+    <button onclick="updateTask()">Update Task</button>
+
+    <pre id="result"></pre>
+
+    <script>
+      async function updateTask() {
+    try {
+        const response = await fetch(
+            "http://127.0.0.1:8000/tasks",
+            {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer test-token"
+                },
+                body: JSON.stringify({
+                    title: "Updated task"
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        document.getElementById("result").textContent =
+            JSON.stringify(data, null, 2);
+
+    } catch (error) {
+        document.getElementById("result").textContent =
+            error.message;
+    }
+}
+    </script>
+</body>
+</html>
